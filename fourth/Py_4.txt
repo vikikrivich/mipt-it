@@ -1,0 +1,52 @@
+1. Переводчик
+s = "Hello"
+Определите русский это или английский и переведите на противоположенный.
+Для определения языка можно просто посчитать количество латинских букв.
+
+from translate import Translator
+translator = Translator(to_lang="ru")
+translation = translator.translate("Hello.")
+print(translation)
+
+
+2. Курс валют
+s = "$100"
+Если первый символ $, то переведите в рубли.
+Запросите курс валют, используя библиотеку requests
+https://pypi.org/project/requests/
+http://www.cbr.ru/scripts/XML_daily.asp
+
+
+3. Погода.
+s = "Москва"
+Если в строке написан город, то вывести погоду.
+
+
+4. Калькулятор
+s = '2**100'
+Если в строке нет букв, то передайте в функцию eval и верните результат.
+>>> eval('2**100')
+1267650600228229401496703205376
+>>> eval('(2+10)*5')
+60
+
+
+5. Зарегистрируйте телеграм бота через https://t.me/BotFather
+Бот должен в себе содержать весь функционал, описанный выше.
+
+#pip install pyTelegramBotAPI
+token = '*******:************************'
+import telebot
+bot = telebot.TeleBot(token)
+
+@bot.message_handler(content_types=['text'])
+def get_text_messages(message):
+  if message.text == "Привет":
+    bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
+  elif message.text == "/help":
+      bot.send_message(message.from_user.id, "Напиши привет")
+  else:
+      bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
+
+bot.polling(none_stop=True, interval=0)
+
