@@ -1,0 +1,7 @@
+% rebase('base.html', title='Multiply')
+<p>A * B = {{get('c', '')}}</p>
+<form method="POST">
+  A: <input type="text" name="a" value={{get('a', '')}}>
+  B: <input type="text" name="b" value={{get('b', '')}}>
+  <input value="Submit" type="submit" />
+</form>

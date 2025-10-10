@@ -1,0 +1,10 @@
+% rebase('base.html', title='Hash')
+<form method="POST">
+  <input type="text" name="text" value="{{get('text', '')}}">
+  <input type="submit" value="Submit">
+</form>
+% if get('text'):
+SHA256: {{get('sha256', '')}}<br>
+MD5: {{get('md5', '')}}<br>
+CRC-32: {{get('crc32', '')}}
+% end
