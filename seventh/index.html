@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wikipedia Search</title>
+</head>
+<body>
+    <h1>Wikipedia Search</h1>
+    <form method="POST" action="/search">
+        <input type="text" name="search" value="{{search_term}}" placeholder="Enter search term">
+        <button type="submit">Search</button>
+    </form>
+    % if pages:
+    <h2>Results:</h2>
+    <ul>
+    % for page in pages:
+        <li><a href="/page/{{page['pageid']}}">{{page['title']}}</a></li>
+    % end
+    </ul>
+    % end
+</body>
+</html>
