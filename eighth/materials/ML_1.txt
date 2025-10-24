@@ -42,3 +42,9 @@ https://pandas.pydata.org/docs/reference/api/pandas.Series.copy.html
 13) Метод fit(X_train, y_train)
 14) Метод predict(X_test)
 15) Метод score(X_test, y_test)
+
+Доп задание на +2 балла:
+1) Разбить данные train_test_split
+2) Применить KNeighborsClassifier к iris
+https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html
+3) Смотря на score, подобрать n_neighbors и metric
